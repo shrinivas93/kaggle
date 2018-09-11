@@ -87,18 +87,36 @@
 		- Expand the feature set by different powers of existing feature
 		- Implement `Multiple Linear Regression` on expanded feature sets
 		- Higher the degree of polynomial, better are the predictions
-	- Support Vector Regression
+	- Support Vector Regression (sklearn.svm - SVR)
 		- Fits linear, non-linear, or any curve based on the dataset
 		- Works well in case of small dataset
-	- Decision Tree Regression
+	- Decision Tree Regression (sklearn.tree - DecisionTreeRegression)
 		- Non-continuos regression model
 		- Splits the dataset space into different zones based on their values and forms a tree
 		- Predicts the value of new data by calculating the average of all data points in the selected zone
 		- Not very good in case of single feature
-	- Random Forest Regression
+	- Random Forest Regression (sklearn.tree - RandomForestRegressor)
 		- More than one Decision trees used for prediction
 		- A type of `Ensemble Learning` *(multiple instances of same or different techniques used for prediction)*
 		- Steps
 			- Take random `K` datapoints from training set and fit a decision tree
 			- Fit `N` decision trees using above approach
 			- For new datapoint, predict value using all decision trees and use its average value
+		- Higher number of trees predict better
+	- Performance measures for Regression
+		- R-Squared
+			- R<sup>2</sup> = 1 - SS<sub>res</sub> / SS<sub>tot</sub>  
+			  where, SS<sub>res</sub> = SUM(y<sub>i</sub> - y<sub>i</sub>')<sup>2</sup>  
+			  and, SS<sub>tot</sub> = SUM(y<sub>i</sub> - y<sub>avg</sub>)<sup>2</sup>
+			- Denotes how better is the model compared to average values of training output
+			- Higher the value of R<sup>2</sup>, better is the model compared to average values of training output
+		- Adjusted R-Squared
+			- Comes into picture because R<sup>2</sup> is misleading in case of multiple features
+			- If more features are added, R<sup>2</sup> increases even if the model is worsening
+			- Adj R<sup>2</sup> = 1 - (1 - R<sup>2</sup>) * (n - 1) / (n - p - 1)  
+			  where n = size of sample data
+			  and p = number of independent variables
+			- It penalizes for addition of independent variable and also takes into account the little increase in R<sup>2</sup> due to addition of bad independent variable
+			- While implementing `Backward Elimination`, consider Adjusted R<sup>2</sup> value also to check whether removing the variable was the smart move
+		- Estimate coefficient in regressor.summary()
+			- Denotes the correlation between the variable and the output if all other variables are kept same
