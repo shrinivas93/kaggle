@@ -113,10 +113,13 @@
 		- Adjusted R-Squared
 			- Comes into picture because R<sup>2</sup> is misleading in case of multiple features
 			- If more features are added, R<sup>2</sup> increases even if the model is worsening
-			- Adj R<sup>2</sup> = 1 - (1 - R<sup>2</sup>) * (n - 1) / (n - p - 1)  
+			- Adj R<sup>2</sup> = 1 - (1 - R<sup>2</sup>) \* (n - 1) / (n - p - 1)  
 			  where n = size of sample data
 			  and p = number of independent variables
 			- It penalizes for addition of independent variable and also takes into account the little increase in R<sup>2</sup> due to addition of bad independent variable
 			- While implementing `Backward Elimination`, consider Adjusted R<sup>2</sup> value also to check whether removing the variable was the smart move
 		- Estimate coefficient in regressor.summary()
 			- Denotes the correlation between the variable and the output if all other variables are kept same
+- Classification
+	- Logistic Regression
+		- 
