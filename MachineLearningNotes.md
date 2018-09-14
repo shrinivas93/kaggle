@@ -121,5 +121,15 @@
 		- Estimate coefficient in regressor.summary()
 			- Denotes the correlation between the variable and the output if all other variables are kept same
 - Classification
-	- Logistic Regression
-		- 
+	- Logistic Regression (sklearn.linear_model - LogisticRegression)
+		- Predicts the probability of target variable based on the features
+		- Can be used as classifier based on the calculation done on the probability
+		- Fits a straight line
+		- Check accuracy of model using Confusion Matrix (sklearn.metrics - confusion_matrix)
+		- It is a linear classifier (Seperates two classes by a straight line, plane or hyper-plane)
+	- K - Nearest Neighbour (sklearn.neighbors - KNeighborsClassifier)
+		- Classifies test datapoint based on the class of majority of training datapoints out of the K nearest neighbours
+		- Calculate distance of test data with all datapoints of training data.
+		- Find nearest K datapoints and choose the class of majority datapoints  from neighbours as class for the test data
+		- Classifies randomly based on the distance of test datapoint with K nearest neighbours of training data
+	
